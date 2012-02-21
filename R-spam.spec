@@ -1,10 +1,10 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  spam
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          0.28_0
-Release:          1
+Release:          2
 Summary:          SPArse Matrix
 Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
@@ -22,6 +22,8 @@ BuildRequires:    R-SparseM R-Matrix
 %else
 BuildRequires:    R-fields R-SparseM R-Matrix 
 %endif
+BuildRequires:    blas-devel
+BuildRequires:    lapack-devel
 
 %description
 Set of function for sparse matrix algebra.  Differences with
