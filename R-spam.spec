@@ -10,17 +10,14 @@ Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.28-0.tar.gz
-Requires:         R-methods 
-%if %{with bootstrap}
-Requires:         R-SparseM R-Matrix 
-%else
-Requires:         R-fields R-SparseM R-Matrix 
+Requires:         R-methods R-SparseM R-Matrix
+%if %{without bootstrap}
+Requires:         R-fields
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
-%if %{with bootstrap}
-BuildRequires:    R-SparseM R-Matrix 
-%else
-BuildRequires:    R-fields R-SparseM R-Matrix 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex
+BuildRequires:    R-methods R-SparseM R-Matrix
+%if %{without bootstrap}
+BuildRequires:    R-fields
 %endif
 BuildRequires:    blas-devel
 BuildRequires:    lapack-devel
