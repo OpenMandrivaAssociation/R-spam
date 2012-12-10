@@ -4,20 +4,32 @@
 
 Name:             R-%{packname}
 Version:          0.28_0
-Release:          2
+Release:          3
 Summary:          SPArse Matrix
 Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.28-0.tar.gz
-Requires:         R-methods R-SparseM R-Matrix
-%if %{without bootstrap}
+Requires:         R-methods 
+%if %{with bootstrap}
+Requires:         R-SparseM
+Requires:         R-Matrix 
+%else
 Requires:         R-fields
+Requires:         R-SparseM
+Requires:         R-Matrix 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex
-BuildRequires:    R-methods R-SparseM R-Matrix
-%if %{without bootstrap}
+BuildRequires:    R-devel
+BuildRequires:    Rmath-devel
+BuildRequires:    texlive-collection-latex
+BuildRequires:    R-methods
+%if %{with bootstrap}
+BuildRequires:    R-SparseM
+BuildRequires:    R-Matrix 
+%else
 BuildRequires:    R-fields
+BuildRequires:    R-SparseM
+BuildRequires:    R-Matrix 
 %endif
 BuildRequires:    blas-devel
 BuildRequires:    lapack-devel
@@ -62,3 +74,15 @@ rm -f %{buildroot}%{rlibdir}/R.css
 %{rlibdir}/%{packname}/demodata
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/libs
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.28_0-2
++ Revision: 778354
+- Rebuild with proper dependencies
+
+* Fri Feb 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.28_0-1
++ Revision: 775943
+- Import R-spam
+- Import R-spam
+
