@@ -3,13 +3,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          0.28_0
-Release:          3
+Version:          0.29.2
+Release:          1
 Summary:          SPArse Matrix
 Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
-Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.28-0.tar.gz
+Source0:          http://cran.r-project.org/src/contrib/spam_0.29-2.tar.gz
 Requires:         R-methods 
 %if %{with bootstrap}
 Requires:         R-SparseM
@@ -74,15 +74,3 @@ rm -f %{buildroot}%{rlibdir}/R.css
 %{rlibdir}/%{packname}/demodata
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/libs
-
-
-%changelog
-* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.28_0-2
-+ Revision: 778354
-- Rebuild with proper dependencies
-
-* Fri Feb 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.28_0-1
-+ Revision: 775943
-- Import R-spam
-- Import R-spam
-
