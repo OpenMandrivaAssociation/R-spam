@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          0.29.2
-Release:          1
+Release:          2
 Summary:          SPArse Matrix
 Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
