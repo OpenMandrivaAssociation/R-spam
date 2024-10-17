@@ -8,7 +8,7 @@ Release:          2
 Summary:          SPArse Matrix
 Group:            Sciences/Mathematics
 License:          GPL | file LICENSE
-URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
+URL:              https://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/spam_0.29-2.tar.gz
 Requires:         R-methods 
 %if %{with bootstrap}
